@@ -157,11 +157,4 @@ SUPABASE_KEY = "sb_publishable_TF-SH4cqMa7uaOD9ISPHCg_0zb23LkI"                 
 SUPABASE_BUCKET = "media"                               # El nombre del bucket público que creamos
 
 # Reemplazamos el sistema de archivos por defecto para que Django use Supabase en producción
-STORAGES = {
-    'default': {
-        'BACKEND': 'django_supabase_storage.SupabaseMediaStorage',
-    },
-    'staticfiles': {
-        'BACKEND': 'django.contrib.staticfiles.storage.StaticFilesStorage', # Dejamos los estáticos por defecto
-    },
-}
+DEFAULT_FILE_STORAGE = 'django_supabase_storage.SupabaseMediaStorage'
