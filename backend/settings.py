@@ -144,7 +144,7 @@ REST_FRAMEWORK = {
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://expedientes-frontend-liard.vercel.app",
+    "https://expedientes-frontend-tau.vercel.app/",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
