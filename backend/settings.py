@@ -150,3 +150,18 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+
+SUPABASE_URL = "https://bzydzhmsmncmldsswcds.supabase.co"  # Tu URL de Supabase
+SUPABASE_KEY = "sb_publishable_TF-SH4cqMa7uaOD9ISPHCg_0zb23LkI"                     # Tu clave pública (anon public)
+SUPABASE_BUCKET = "media"                               # El nombre del bucket público que creamos
+
+# Reemplazamos el sistema de archivos por defecto para que Django use Supabase en producción
+STORAGES = {
+    'default': {
+        'BACKEND': 'django_supabase_storage.SupabaseMediaStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'django.contrib.staticfiles.storage.StaticFilesStorage', # Dejamos los estáticos por defecto
+    },
+}
