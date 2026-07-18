@@ -158,3 +158,4 @@ SUPABASE_BUCKET = "media"                               # El nombre del bucket p
 
 # Reemplazamos el sistema de archivos por defecto para que Django use Supabase en producción
 DEFAULT_FILE_STORAGE = 'django_supabase_storage.SupabaseMediaStorage'
+MEDIA_URL = f"{SUPABASE_URL}/storage/v1/object/public/{SUPABASE_BUCKET}/"
