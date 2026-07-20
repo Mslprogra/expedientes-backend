@@ -77,12 +77,31 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES = {
+"""
+DATABAsSES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres', # Por defecto en Supabase
+        'USER': 'postgres.bzydzhmsmncmldsswcds',
+        'PASSWORD': 'Adminsupa1234@',
+        'HOST': 'aws-1-us-west-2.pooler.supabase.com',
+        'PORT': '6543', # Cambiar a 6543 si usas el Pooler de conexiones
+        'OPTIONS': {
+            'sslmode': 'require',
+            'connect_timeout': 30,  # 30 segundos de timeout
+        },
+        'CONN_MAX_AGE': 600,  # Mantén conexiones abiertas
+    }        
 }
+
+
 
 
 # Password validation
